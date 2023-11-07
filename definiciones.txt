@@ -1,0 +1,31 @@
+-- command.CommandText :
+    
+    Esta propiedad se utiliza para especificar la instrucción SQL que se ejecutará cuando se invoque el comando en la base de datos.
+    En resumen, command.CommandText se utiliza para establecer la consulta SQL o el procedimiento almacenado que se ejecutará cuando llames al método ExecuteReader, ExecuteNonQuery u otros métodos relacionados con el comando. Aquí hay un ejemplo de cómo usar command.CommandText para establecer y ejecutar una consulta SQL
+
+
+ -- command.Parameters.Add(new SQLiteParameter("@idDirector", idDirector));
+
+    quiero añadir un parametro a la consulta que hice añadiendo new SQLite parametro donde ponga("@idDirector", reemplazarlo por la variable idDirector)
+    Exactamente, cuando defines un parámetro llamado @idDirector utilizando command.Parameters.Add(new SQLiteParameter("@idDirector", idDirector)), estás diciéndole al motor de la base de datos que, en las consultas SQL que utilicen ese parámetro, el valor de @idDirector será reemplazado por el valor de la variable idDirector que hayas asignado.
+
+
+--  SQLiteCommand command = connection.CreateCommand();
+
+
+    La línea SQLiteCommand command = connection.CreateCommand(); se utiliza para crear una instancia de un objeto SQLiteCommand que está asociado a una conexión específica a una base de datos SQLite. El objeto SQLiteCommand se utiliza para ejecutar consultas SQL y realizar operaciones en la base de datos SQLite.
+
+    En detalle, esta línea de código hace lo siguiente:
+
+    connection: Supongamos que tienes una conexión abierta a una base de datos SQLite a través de un objeto SQLiteConnection llamado connection.
+
+    connection.CreateCommand(): Este método se llama en el objeto connection para crear un nuevo objeto SQLiteCommand. Este nuevo comando estará vinculado a la conexión connection que le dio origen.
+
+    Una vez que has creado un objeto SQLiteCommand, puedes establecer su CommandText para definir la consulta SQL que deseas ejecutar y utilizar su método ExecuteReader, ExecuteNonQuery, o ExecuteScalar para llevar a cabo la operación en la base de datos, ya sea para recuperar datos, realizar inserciones, actualizaciones o eliminaciones, entre otras tareas.
+
+
+
+
+--  command.ExecuteNonQuery();
+
+    La línea  se utiliza para ejecutar una consulta SQL que no devuelve resultados, es decir, una consulta que no recupera datos de la base de datos, pero que realiza una acción en la base de datos, como una inserción, actualización o eliminación de registros. La función ExecuteNonQuery se utiliza comúnmente para realizar operaciones de modificación en la base de datos.
