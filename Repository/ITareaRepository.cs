@@ -3,7 +3,7 @@ namespace Repository
 {
     public interface ITareaRepository
     {
-        public Tarea Create(int idTablero);
+        public Tarea Create(int idTablero,Tarea tarea);
         public void Update(int id, Tarea tarea);
         public Tarea GetById(int id);
         public List<Tarea> GetAllByUser(int idUsuario);

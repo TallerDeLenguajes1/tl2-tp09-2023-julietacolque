@@ -4,9 +4,9 @@ namespace Repository
 {
     public interface ITableroRepository
     {
-        public Tablero Create();
+        public void Create(Tablero tablero);
 
-        public void Updtate(int id,Tablero tablero);
+        public void Update(int id,Tablero tablero);
 
         public Tablero GetById(int id);
 

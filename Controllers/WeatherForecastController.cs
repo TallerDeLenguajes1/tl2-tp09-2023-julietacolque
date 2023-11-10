@@ -17,14 +17,19 @@ public class WeatherForecastController : ControllerBase
     public WeatherForecastController(ILogger<WeatherForecastController> logger)
     {
         _logger = logger;
-        var usuarioR = new UsuarioRepository();
-        var user = new Usuario();
-        user.NombreUsuario = "florDespues";
-        usuarioR.Update(2, user);
-        var listaU = usuarioR.GetAll();
-        Console.WriteLine(listaU[0].NombreUsuario);
-        Console.WriteLine(usuarioR.GetById(2).NombreUsuario);
-        usuarioR.Remove(2);
+        Tablero tabl = new(){
+        Nombre="modificado",
+        Descripcion = "descripcion",
+        IdUsuarioPropietario = 1
+        };
+        var tableroR = new TableroRepository();
+        tableroR.Update(1,tabl);
+        var tableroPerri = tableroR.GetById(4);
+        // Console.WriteLine(tableroPerri.Nombre);
+        // Console.WriteLine(tableroR.GetAll().Count);
+        var listaT = tableroR.GetByUser(1);
+        Console.WriteLine(listaT.Count);
+       
 
     }
 
@@ -40,3 +45,13 @@ public class WeatherForecastController : ControllerBase
         .ToArray();
     }
 }
+
+
+//  var usuarioR = new UsuarioRepository();
+//         var user = new Usuario();
+//         user.NombreUsuario = "florDespues";
+//         usuarioR.Update(2, user);
+//         var listaU = usuarioR.GetAll();
+//         Console.WriteLine(listaU[0].NombreUsuario);
+//         Console.WriteLine(usuarioR.GetById(2).NombreUsuario);
+//         usuarioR.Remove(2);

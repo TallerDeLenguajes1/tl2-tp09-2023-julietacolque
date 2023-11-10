@@ -1,4 +1,3 @@
-using System.Data.SqlClient;
 using System.Data.SQLite;
 using Models;
 namespace Repository
@@ -13,13 +12,14 @@ namespace Repository
 
             using SQLiteConnection conexion = new(cadenaConexion); //creo la conexion
 
-            conexion.Open(); //abro la conexion
+
 
             var command = new SQLiteCommand(query, conexion); //crea un objeto de tipo command asociado a una conexion.
 
 
             command.Parameters.Add(new SQLiteParameter("@nombre_de_usuario", usuario.NombreUsuario));
 
+            conexion.Open(); //abro la conexion
             command.ExecuteNonQuery(); //ejecuta consultas que no devuelve resultados,pero si realiza una accion en la bd
 
             conexion.Close();
